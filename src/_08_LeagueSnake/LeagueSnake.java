@@ -54,12 +54,15 @@ public class LeagueSnake extends PApplet {
 
     void drawFood() {
         // Draw the food
+    	  color(255,0,0);
         rect(10,10,foodX,foodY);
-        color(255,0,0);
+      
     }
 
     void drawSnake() {
         // Draw the head of the snake followed by its tail
+    	color(0,255,0);
+    	rect(10,10,head.x, head.y);
     	
     }
 

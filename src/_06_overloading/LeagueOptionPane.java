@@ -1,5 +1,6 @@
 package _06_overloading;
 
+import java.awt.Color;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -57,12 +58,10 @@ public class LeagueOptionPane {
 	//    3 String parameters (one for the message, one for the title, and one for the fileName)
 	public static void showMessageDialog(String message, String title, String image) {
 		JFrame frame = new JFrame(title);
-		JLabel label = new JLabel();
+		JLabel label = new JLabel(loadImage(image));
 		JPanel panel = new JPanel();
 		label.setText(message);
 		frame.add(label);
-		ImageIcon icon = loadImage(image);
-		icon.
 		frame.pack();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,7 +70,20 @@ public class LeagueOptionPane {
 		frame.setLocationRelativeTo(null);
 	}
 	// 7. Call this method in the Runner class
-	
+	public static void showMessageDialog(String message, String title, String image, Color color) {
+		JFrame frame = new JFrame(title);
+		JLabel label = new JLabel(loadImage(image));
+		JPanel panel = new JPanel();
+		label.setText(message);
+		frame.add(label);
+		frame.setBackground(color);
+		frame.pack();
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		// 2. Uncomment the line of code below. It sets the location of our frame to the center of the screen
+		frame.setLocationRelativeTo(null);
+	}
 	// CHALLENGE: 
 		//	1. Create another showMessageDialog() method that lets us choose the Message, Title, Image, and Background Color
 		//     3 String parameters (one for the message, one for the title, and one for the fileName)
